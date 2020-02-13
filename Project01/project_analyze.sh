@@ -5,37 +5,35 @@ cd "$path"
 
 if [ "$1" -eq 1 ] ; then
 
-
-dir=$(find ../ -type f | grep -v .git)
-
-
 if [ -f fixme.log ]; then 
 	rm fixme.log
 fi
 touch fixme.log
 
-
-for f in $dir
+OIFS="$IFS"
+IFS=$'\n'
+for f in `find ../ -type f | grep -v .git`
 do
-	if [ $(tail -1 $f | egrep "*#FIXME") ] ; then 
-		echo $f >> fixme.log
+	if [ $(tail -1 "$f" | egrep "*#FIXME") ] ; then 
+		echo "$f" >> fixme.log
 	fi
 done
-
+IFS="$OIFS"
 
 elif [ "$1" -eq 2 ] ; then
 
+OIFS="$IFS"
 IFS=$'\n'
 for c in $(git log --oneline)
 do
 	if [ $(echo "$c" | egrep -i "*merge") ]; then	
-	commit="${c%% *}"
+	commit="${c%% *}" # delete the longest match of ' *' from the end
 	git checkout "$commit" 
 	break
 	fi
 
 done
-
+IFS="$OIFS"
 fi
 
 
