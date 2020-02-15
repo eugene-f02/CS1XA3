@@ -1,12 +1,18 @@
 #!/bin/bash
 
-path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
+if [ "$#" -gt 1 ] || [ "$#" -eq 0 ]; then
+echo "Multiple(or zero) arguments are not allowed. Check README.md for clarification"
+exit 1
+fi
+
+
+path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd)
 cd "$path"
 
 OIFS="$IFS"
 IFS=$'\n'
 
-if [ "$1" -eq 1 ] ; then
+if [ "$1" == 1 ] ; then
 
 if [ -f fixme.log ]; then
 	rm fixme.log
@@ -14,7 +20,7 @@ fi
 
 touch fixme.log
 
-for f in `find ../ -type f` # ??? | grep -v .git
+for f in `find ../ -type f`
 do
 	if [ $(tail -1 "$f" | egrep ".*#FIXME.*") ] ; then
 		fixmefile=CS1XA3$(echo "$f" | cut -c3-)
@@ -22,7 +28,7 @@ do
 	fi
 done
 
-elif [ "$1" -eq 2 ] ; then
+elif [ "$1" == 2 ] ; then
 
 for c in $(git log --oneline)
 do
@@ -35,7 +41,7 @@ do
 done
 
 
-elif [ "$1" -eq 3 ] ; then
+elif [ "$1" == 3 ] ; then
 
 echo 'Type the extension you are looking for and hit enter'
 read extension
@@ -43,7 +49,7 @@ read extension
 let counter=0
 
 
-for f in `find ../ -type f -name "*.$extension" | grep -v .git`
+for f in `find ../ -type f -name "*.$extension"`
 do
 	counter=$(($counter+1))
 done
@@ -51,7 +57,7 @@ done
 echo "There are $counter files of type .$extension in this repository"
 
 
-elif [ "$1" -eq 4 ] ; then
+elif [ "$1" == 4 ] ; then
 
 echo "Type the tag and hit enter"
 read tag
@@ -62,7 +68,7 @@ fi
 
 touch "$tag".log
 
-for f in `find ../ -type f -name "*.py" | grep -v .git`
+for f in `find ../ -type f -name "*.py"`
 do
 for line in `cat "$f"`
 do
