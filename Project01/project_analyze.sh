@@ -1,5 +1,28 @@
 #!/bin/bash
 
+calc_permission () {
+let count=0
+result=""
+for i in {0..2}
+do
+        if [ $(echo "$1" | egrep "^(...){$i}r..") ]; then
+                count=$(($count+4))
+        fi
+        if [ $(echo "$1" | egrep "^(...){$i}.w.") ]; then
+                 count=$(($count+2))
+        fi
+        if [ $(echo "$1" | egrep "^(...){$i}..x") ]; then
+                 count=$(($count+1))
+        fi
+        result="$result""$count"
+        let count=0
+done
+
+echo "$result"
+}
+
+
+
 if [ "$#" -gt 1 ] || [ "$#" -eq 0 ]; then
 echo "Multiple(or zero) arguments are not allowed. Check README.md for clarification"
 exit 1
@@ -79,6 +102,43 @@ do
 done
 done
 
+elif [ "$1" == "5" ]; then
+
+echo "Type in whether you want to change or restore 'sh' files' permssions"
+
+read option
+
+if [ "$option" == "Change" ]; then
+
+	if [ -f permissions.log ]; then
+	rm permissions.log
+	fi
+
+	touch permissions.log
+
+	for i in `find ../ -type f -name "*.sh"`
+do
+	echo "$i "$(calc_permission $(ls -l "$i" | cut -c2-10)) >> permissions.log
+	if [ $(ls -l "$i" | egrep "^.(.w.){3}") ]; then
+		chmod a+x "$i"
+	elif [ $(ls -l "$i" | egrep "^.(.w.){2}") ]; then
+		chmod  ug+x "$i"; chmod o-x "$i"
+	elif [ $(ls -l "$i" | egrep "^.(.w.){1}") ]; then
+		chmod u+x "$i"; chmod go-x "$i"
+	else
+		chmod a-x "$i"
+	fi
+done
+elif [ "$option" == "Restore" ]; then
+	for i in `cat permissions.log`
+do
+	chmod "${i##.* }" "${i%% *}"
+done
+else
+	echo "Inappropriate input. Check README.md for clarification"
+fi
+
+
 
 else
 	echo  "Inappropriate value for the argument. Check README.md for clarification."
@@ -87,3 +147,5 @@ else
 fi
 
 IFS="$OIFS"
+
+
