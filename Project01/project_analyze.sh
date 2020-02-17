@@ -132,17 +132,61 @@ done
 elif [ "$option" == "Restore" ]; then
 	for i in `cat permissions.log`
 do
-	chmod "${i##.* }" "${i%% *}"
+	chmod "${i##* }" "${i% *}"
 done
 else
 	echo "Inappropriate input. Check README.md for clarification"
+fi
+
+elif [ "$1" == "6" ]; then
+
+echo "Type in whether you want to backup or restore files"
+
+read option
+
+if [ "$option" == "Backup" ] ; then
+
+if [ -d backup ]; then
+rm -r backup
+fi
+
+mkdir backup
+cd backup
+touch restore.log
+cd ..
+
+for i in `find ../ -type f -name "*.tmp"`
+do
+	echo "${i##.*/}" "${i%/*}" >> ../Project01/backup/restore.log
+	mv "$i" ../Project01/backup
+done
+
+elif [ "$option" == "Restore" ] ; then
+cd backup
+
+if [ -f restore.log ]; then
+
+for i in `cat restore.log`
+do
+	if [ -f "${i%% ../*}" ]; then
+	mv "${i%% ../*}" ../"${i##*tmp }"
+	else
+	echo "${i%% ../*}"  no longer exists
+	fi
+done
+
+else
+	echo "Error: restore.log no longer exists"
+fi
+
+else 
+        echo "Inappropriate input. Check README.md for clarification"
 fi
 
 
 
 else
 	echo  "Inappropriate value for the argument. Check README.md for clarification."
-
 
 fi
 
