@@ -169,7 +169,7 @@ if [ -f restore.log ]; then
 for i in `cat restore.log`
 do
 	if [ -f "${i%% ../*}" ]; then
-	mv "${i%% ../*}" ../"${i##*tmp }"
+	cp "${i%% ../*}" ../"${i##*tmp }"
 	else
 	echo "${i%% ../*}"  no longer exists
 	fi
