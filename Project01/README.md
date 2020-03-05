@@ -137,7 +137,7 @@ All of the files will be encrypted **except** for the following files and folder
  1. Pass **enc** as a value for the **arg1** before executing project_analyze.sh
  1. Type the **option** (i.e either **Encrypt** or **Decrypt** (Make sure its capitalized!)) and hit enter.
     * If **Decrypt** option is selected:
-    1. Type the path of a file relative to CS1XA3 folder (i.e. if your want to decrypt **CS1XA3/file.txt**, type **file.txt**   , if your want to decrypt **CS1XA3/Project01/file2.txt**, type **Project01/file.txt** (DO NOT PUT **/** AS THE FIRST CHARACTER!**))
+    1. Type the path of a file relative to CS1XA3 folder (i.e. if your want to decrypt **CS1XA3/file.txt**, type **file.txt**   , if your want to decrypt **CS1XA3/Project01/file2.txt**, type **Project01/file2.txt** (DO NOT PUT **/** AS THE FIRST CHARACTER!))
     1. Type the **6-character decryption code** associated with that file. (if you are the owner of CS1XA3/Project01/encryptions.txt, you can find the decryption codes in there)
  
 **Reference**:
