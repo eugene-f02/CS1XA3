@@ -1,0 +1,461 @@
+@import url("https://fonts.googleapis.com/css?family=Kalam&display=swap");
+
+.section{
+  margin-left: 7vw; 
+  text-align: left;
+  float: left;
+}
+.awardSection{
+  width:80%;
+  margin-bottom:2%;
+}
+
+
+
+.title{ /* DONE */
+  text-align: center;
+  font-size: 0.6vw;
+  color: rgba(9, 40, 87, 0.879);
+  margin-bottom: .3vw;
+  text-decoration: underline;
+}
+.blueTxtBold{ /* DONE */
+  color: rgba(9, 40, 87, 0.879);
+  font-weight: bold;
+}
+.medFont{
+  font-size: 1.5vw;
+}
+.sectionTittle{ /* DONE */
+  color:rgb(20, 3, 45);
+  text-align: left;
+  font-size: 5.3vw;
+  padding-left:5%;
+
+}
+.container{ /* DONE */
+  padding-top: 1.78vw;
+  height:41.6vw;
+}
+
+.locUni{
+  margin-top:-15%;
+  margin-left:25%;
+  text-align: left;
+  font-size: 1.2vw;
+  display: none;
+}
+
+#fadeMcMaster{
+  position: absolute;
+  top: 27%;
+  left: 15%;
+  width: 70%;
+  height: 50%;
+}
+
+.float{
+  max-width:33.3vw;
+  height: 23.8vw;
+  float: left;
+  margin-top: -6%;
+  margin-left:15%;
+  position: absolute;
+
+}
+
+.float2{
+  float: right;
+  margin-top: -2%;
+  margin-right: 3%;
+}
+.languageBars{ /* DONE */
+  height: 0.3vw;
+  float: left;
+  margin-top: -2vw;
+  display: none;
+
+}
+body{
+  width:100%;
+  font-family: 'Kalam', cursive;
+  margin: -0.48vw 0 -0.6vw;
+  background-color: snow;
+}
+
+header {  /* DONE */
+  z-index: 2;
+  width:100%;
+  position: fixed;
+}
+
+#name{  /* DONE */
+  font-size: 6vw;
+  padding-left: 5%;
+  height: 9.2vw;
+  background-color: lightgray;
+}
+#contactInfo{  /* DONE */
+  text-align: center;
+  font-size: 1.5vw;
+  width: 30vw;
+  float: right;
+  height: auto;
+  padding-top: 0.2vw;
+}
+.logo{  /* DONE */
+  max-width: 4vw;
+  margin-top: -1.5vw;
+  margin-left: 1vw;
+  border-radius: 50%;
+  border: 0.1vw;
+  border-style: solid;
+  border-color: lightgray;
+}
+
+ #navigator {
+  padding-top:0.9vw;
+  background-image: linear-gradient(to right, rgb(20, 3, 45),rgba(9, 40, 87, 0.879));
+  height: 10vw;
+  margin-bottom: 1.8vw;
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+} 
+
+#content{  /* DONE */
+  padding-top: 23vw;
+  background-color: snow;
+  padding-left: 3%;
+  padding-right:3%;
+}
+
+#me{ /* DONE */
+  width: 29.7vw;
+  margin: 1.2vw 0 0 10%;
+  float: left;
+  border-radius: 0.7vw;
+  border-color: rgb(20, 3, 45);
+}
+
+#greetings{ /* DONE */
+  height: 35.7vw; 
+}
+
+#welcome{ /* DONE */
+  
+  height: 28vw; 
+  width: 41.6vw;
+  padding-right: 4.8vw;
+  float: right;
+}
+
+.largeFont{ /* DONE */
+  font-size: 3vw;
+}
+.mediumFont{ /* DONE */
+  font-size: 1.8vw;
+}
+
+.circle {  /* DONE */
+  position: relative;
+  float: left;
+  margin-left:3.15%;
+  width: 9vw;
+  height: 9vw;
+  border-radius: 50%;
+  font-size: 1vw;
+  color: snow;
+  line-height: 9vw; 
+  text-align: center;
+  background: transparent;
+
+}
+
+#aw1,#aw2,#aw3,#aw4,#aw5,#aw6{
+  display: none;
+}
+
+.progress{
+  position: relative;
+  margin-top: 26%;
+  width: 90%;
+  margin-left:5%;
+  margin-right:5%;
+  height: 0.4vw;
+  border-style: solid;
+  background: linear-gradient(to right, rgb(20, 3, 45),rgba(9, 40, 87, 0.879));
+}
+.projSec{
+  margin-right: 10%;
+  text-align: center;
+}
+.about{
+  font-size: 1.2vw;
+  color:dimgray
+}
+
+.p{
+  line-height:0.2vw;
+}
+.bar{
+  position: absolute;
+	top: 0;
+	left: 0%;
+	height: 0.4vw;
+  background: red;
+
+}
+#projects{
+  height: 61vw;
+  font-size: 1.8vw;
+}
+.circleProgress{
+  font-size: 1.2vw;
+  text-align: center;
+	position: absolute;
+	z-index: 1;
+	top: -3vw;
+	width: 6vw;
+	height: 6vw;
+	background-color: snow;
+	border: 0.12vw solid rgb(48,49,51);
+  border-radius: 50%;
+  line-height: 6vw; 
+	box-shadow: inset 0 0 0 0.12vw lightgray,
+					0 0 0 0.24vw snow;
+}
+.projectCircle{
+  
+  background-color: darkgray;
+  font-size: 2.4vw;
+  float: left;
+  width: 3vw;
+  height: 3vw;
+  line-height: 3vw; 
+	border: 0.12vw solid rgb(48,49,51);
+  border-radius: 50%;
+	box-shadow: inset 0 0 0 0.12vw lightgray,
+					0 0 0 0.24vw snow;
+  
+}
+.circle1{
+  left: calc(20% - 0.5vw);
+}
+.circle2{
+  left: calc(40% - 0.5vw);
+}
+.circle3{
+	left: calc(60% - 0.5vw);
+}
+.circle4{
+	left: calc(80% - 0.5vw);
+}
+
+
+
+.divider1 /* DONE */
+  {
+    position: relative;
+    padding-bottom: 0.3vw;
+    height: 0.13vw;
+    background-color: lightgray;
+  }
+
+.divider2 /* DONE */
+{
+	position: relative;
+  margin-top: -1.5vw;
+  margin-bottom: 0.9vw;
+  height: 0.13vw;
+}
+.divider{ /* DONE */
+  position: relative;
+  height: 0.13vw;
+}
+.div-transparent2:before /* DONE */
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 0.13vw;
+	background-image: linear-gradient(to right, transparent, rgb(0, 0, 0), transparent);
+}
+.div-transparent1:before /* DONE */
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 0.13vw;
+	background-image: linear-gradient(to right, grey, rgb(0, 0, 0), grey);
+}
+
+.div-dot2:after /* DONE */
+{
+  content: "";
+	position: absolute;
+	z-index: 1;
+	top: -0.9vw;
+	left: calc(50% - 0.9vw);
+	width: 1.8vw;
+	height: 1.8vw;
+	background-color: goldenrod;
+	border: 0.075vw solid rgb(48,49,51);
+	border-radius: 50%;
+	box-shadow: inset 0 0 0 0.15vw snow,
+					0 0 0 0.3vw snow;
+}
+
+.div-dot3:after /* DONE */
+{
+  font-size: 2vw;
+  font-weight: bold;
+  text-align: center;
+  line-height: 3.6vw;
+  content: "^";
+	position: absolute;
+	z-index: 1;
+	top: -0.9vw;
+	left: calc(50% - 0.9vw);
+	width: 1.8vw;
+	height: 1.8vw;
+	background-color: goldenrod;
+	border: 0.075vw solid rgb(48,49,51);
+	border-radius: 50%;
+	box-shadow: inset 0 0 0 0.15vw snow,
+					0 0 0 0.3vw snow;
+}
+
+.div-dot1:after /* DONE */
+{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -0.9vw;
+	left: calc(50% - 0.9vw);
+	width: 1.8vw;
+	height: 1.8vw;
+	background-color: goldenrod;
+	border: 0.075vw solid rgb(48,49,51);
+	border-radius: 50%;
+	box-shadow: inset 0 0 0 0.15vw lightgray,
+					0 0 0 0.3vw lightgray;
+}
+
+
+
+#roboticsExtracur{
+  width: 35.7vw;
+}
+
+#chessClubExtracur{
+  width: 44.6vw;margin-top: -5%;
+  margin-left:4vw 
+}
+
+#robotics{
+  width: 38%;position: absolute;border-radius: 5%;margin-left: 10%
+}
+#contAw{height: 52vw}
+
+
+.awb{
+  text-align: center;
+}
+
+.blackColor{
+  color: black;
+}
+
+.redColor{
+  color:red;
+}
+
+#welc{
+  font-size: 3.58vw;
+}
+
+#intro{
+  font-size: 3vw;
+}
+
+#aboutMeInfo{
+  width: 35.7vw;
+}
+
+
+#myLang{
+  width: 17.85vw;
+}
+
+#hobbiesDiv{
+  width: 17.85vw;
+}
+
+#hobbiesUl{
+  list-style: none;
+}
+#volley{
+  width: 7%;position: relative;float: right;margin-right: 4%; margin-bottom: 1.2vw;
+}
+
+#guitar{
+  width: 15%;position: relative;float: right;margin-right: 5%; margin-top:-2.5%;
+}
+
+.marginLeft5vw{
+  margin-left: 5vw;
+}
+
+#otherSoft{
+  margin-left:4vw;
+}
+
+.textAllignLeft{
+  text-align: left;
+}
+
+#tourBrackDiv{
+  margin-top: 7%;
+}
+
+#timmies{
+  width: 30%; float: right; margin-left: 48%; margin-top: 5% ;position: absolute;display: none;
+}
+
+#workExp{
+  height: 43vw;
+}
+
+#timmiesUl{
+  margin-right: 4vw;
+}
+#volunteer{
+  height: 45vw;
+}
+
+#ebc{
+  width: 15%; float: right; margin-left: 55%; margin-top: 6%;position: absolute;border-radius: 5%;border: 1px solid black;display: none;
+}
+
+#extracurric{
+  height: 56vw;
+}
+
+#chess,#tournament{
+  width:70%;display: none;
+}
+
+#uni{
+  padding-top:3vw;
+  width:100%;
+}
+
+#mcmaster{
+  width:30vw;
+}
