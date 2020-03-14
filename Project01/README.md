@@ -143,7 +143,7 @@ All of the files will be encrypted **except** for the following files and folder
 **Reference**:
 * Lecture and Lab slides
 * Python script inside a bash script- [Link](https://unix.stackexchange.com/questions/184726/how-to-include-python-script-inside-a-bash-script)
-* Using Command Line Arguments in Python - [Link](https://wellsr.com/python/using-command-line-arguments-with-python-sys-argv/)
+* Using Command Line Arguments in Python - [Link](https://wellsr.com/python/using-command-line-arguments-with-python-sys-argv/) 
 *  (id -u) and (stat -c "%u" file.name) commands - [Link](https://superuser.com/questions/52232/script-in-unix-bash-to-determine-if-the-user-is-the-owner-of-a-file)
 * Bash arrays -[Link](https://opensource.com/article/18/5/you-dont-know-bash-intro-bash-arrays)
 * Functions in bash - [Link](https://linuxize.com/post/bash-functions/)
