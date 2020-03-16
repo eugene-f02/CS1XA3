@@ -59,11 +59,6 @@ $(".projectCircle").hover(function () {
 
 //----->
 
-$(window).resize(function() {
-    chessHeight=Math.round($("#chess").height()*0.9);
-    tourHeight=Math.round($("#tournament").height()*0.90);
-});
-
 
 
 
@@ -74,17 +69,15 @@ function viewportWidthOf(a){
 
 var tempChess=0;
 var counterChess=0;
-var chessHeight=Math.round($("#chess").height()*0.9);
 
 $("#proj1").click(function (e) { 
     e.preventDefault();
 
     if (counterChess%2==0){
-        tempChess=viewportWidthOf(chessHeight);
         $("#chess").show(500);
         $("#proj1").text("-");
         $("#projects").animate({
-            height: '+='+tempChess+'vw'
+            height: '+='+"45.8"+'vw'
           });
         counterChess++;
     }
@@ -92,7 +85,7 @@ $("#proj1").click(function (e) {
         $("#chess").hide(500);
         $("#proj1").text("+");
         $("#projects").animate({
-            height: '-='+tempChess+'vw'
+            height: '-='+"45.8"+'vw'
           });
         counterChess++;
     }
@@ -101,8 +94,6 @@ $("#proj1").click(function (e) {
 
 var tempTour=0;
 var counterTour=0;
-var tourHeight=Math.round($("#tournament").height()*0.90);
-
 
 
 $("#proj2").click(function (e) { 
@@ -110,10 +101,9 @@ $("#proj2").click(function (e) {
 
     if (counterTour%2==0){
         $("#tournament").show(500);
-        tempTour=viewportWidthOf(tourHeight);
         $("#proj2").text("-");
         $("#projects").animate({
-            height: '+='+tempTour+'vw'
+            height: '+='+"33"+'vw'
           });
         counterTour++;
     }
@@ -121,7 +111,7 @@ $("#proj2").click(function (e) {
         $("#tournament").hide(500);
         $("#proj2").text("+");
         $("#projects").animate({
-            height: '-='+tempTour+'vw'
+            height: '-='+"33"+'vw'
           });
         counterTour++;
     }
@@ -239,5 +229,4 @@ var delayFinished=false;
 
     $("#me").animate({"marginLeft":"+=5%"},600);
     $(".skills li").hide();
-
   });
