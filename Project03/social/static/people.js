@@ -2,13 +2,19 @@
    | Handle Submiting Friend Requests - called by $('.like-button').click(submitLike)
    ********************************************************************************************
    */
+
+function acceptDeclineResponse(data){
+    location.reload();
+}
+
 function frResponse(data,status) {
-    if (status == 'success') {
-        // reload page to update like count
-        location.reload();
+    if (data["success"]==true) {
+       $("#fr-"+$.escapeSelector(data["id"])).prop('disabled', true);
+       $("#sentReq-"+$.escapeSelector(data["id"])).html("Request has been successfully sent").css("color","green")
+        //location.reload();
     }
     else {
-        alert('failed to create friend request ' + status);
+        $("#sentReq-"+$.escapeSelector(data["id"])).html("Request has been already sent").css("color","red")
     }
 }
 
@@ -30,18 +36,16 @@ function friendRequest(event) {
    ********************************************************************************************
    */
 function morePplResponse(data,status) {
-    if (status == 'success') {
-        // reload page to display new Post
-        location.reload();
-    }
-    else {
-        alert('failed to request more ppl' + status);
-    }
+        if (data['success']) location.reload();
+        else{
+            $("#more-ppl-button").prop('disabled',true);
+        } 
+       
 }
 
 function submitMorePpl(event) {
     // submit empty data
-    let json_data = { };
+    let json_data = {"inc": true};
     // globally defined in messages.djhtml using i{% url 'social:more_post_view' %}
     let url_path = more_ppl_url;
 
@@ -58,8 +62,15 @@ function submitMorePpl(event) {
    */
 
 function acceptDeclineRequest(event) {
+    let decision=($(this).attr("id")).slice(0,1)
+    let id=($(this).attr("id")).slice(2)
+    let json_data = {'id':id, 'decision':decision}
+    let url_path = accept_decline_url;
+    $.post(url_path,
+        json_data,
+        acceptDeclineResponse);
+
     // TODO Objective 6: perform AJAX POST to accept or decline Friend Request
-    alert('Accept/Decline Button Pressed');
 }
 
 /* ********************************************************************************************

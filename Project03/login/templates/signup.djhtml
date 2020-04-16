@@ -1,7 +1,33 @@
 {% extends 'base.djhtml' %}
 
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'w3login.css' %}">
+{% endblock %}
+
 {% block title %}Signup Page{% endblock %}
 
 {% block middle_column %}
-    <!-- TODO Objective 1: implement signup form -->
+    <form id="signup_form" method="post" action="{% url 'login:signup_view' %}">
+            {% csrf_token %}
+            <label for="username">Username:</label><p></p><input laceHolder="Name.." type="text" name="username" required><p></p>
+            <div align="center" id ="userExists" style="color: red;"></div>
+            <label for="password">Password:</label><p></p><input type="password" name="password" required><p></p>
+            <div align="center" id ="pass" style="color: red;"></div>
+            <label for="confPass">Password Confirmation:</label><p></p><input type="password" name="confPass" required><p></p>
+            <div align="center" id ="confirmPass" style="color: red;"></div>
+
+            <button id="submitBut" type="submit">Signup</button>
+    </form>
+{% endblock %}
+
+
+{% block script %}
+<script>
+ $.ajaxSetup({
+     headers: { "X-CSRFToken": '{{csrf_token}}' }
+ });
+</script>
+<script src="{% static 'signup.js' %}"></script>
+
 {% endblock %}

@@ -1,6 +1,10 @@
 {% extends 'social_base.djhtml' %}
 
+
+
 {% block title %}Account Page{% endblock %}
+
+
 
 {% block middle_column %}
     <div class="w3-row-padding">
@@ -9,6 +13,19 @@
                 <div class="w3-container w3-padding">
                     <h6 class="w3-opacity">Change Password</h6>
                     <!--                     TODO Objective 3: Add Password Change Form -->
+                     <form id="changePass" method="post" action="/">
+                            {% csrf_token %}
+                            <label for="currentPass">Current Password:</label><p></p><input type="password" name="currentPassword" required><p></p>
+                            <div align="center" id ="wrongCurrPass" style="color: red;"></div>
+                            <label for="newPass">New Password:</label><p></p><input type="password" name="newPassword" required><p></p>
+                            <div align="center" id ="NewPass" style="color: red;"></div>
+                            <label for="confNewPass">New Password Confirmation:</label><p></p><input type="password" name="confNewPassword" required><p></p>
+                            <div align="center" id ="NewConfirmPass" style="color: red;"></div>
+                            <div align="center" id ="successPassChange" style="color: green;"></div>
+                            <button id="submitBut" type="submit">Submit</button>
+                     </form>
+
+
                 </div>
             </div>
         </div>
@@ -18,9 +35,52 @@
             <div class="w3-card w3-round w3-white">
                 <div class="w3-container w3-padding">
                     <h6 class="w3-opacity">Update Info</h6>
+                    
                     <!--                     TODO Objective 3: Add User Info Update Forms -->
+                    
+                    <form id="userInfo" method="post" action="{% url 'social:account_view' %}">
+                    {% csrf_token %}
+                      <div style="margin-right:20%; float:left">
+                      <label for="employment">Employment:</label><p></p><input maxlength="30" type="text" name="employment" ><p></p>
+                            <label for="location">Location:</label><p></p><input maxlength="50" type="text" name="location" ><p></p>
+                            <label for="birthday">Birthday:</label><p></p><input maxlength="10" type="date" name="birthday" min="1900-01-01" max="2050-01-01" ><p></p>
+                              {% comment %} <div align="center" id ="birthdayConflict" style="color: red;"></div> {% endcomment %}
+                        
+                             <button id="submitButInfo" type="submit">Submit</button>
+                             <p align="center" id ="successInfoChange" style="color: green;"></p>
+                      </div>
+
+                      <div style="float:left" id="subBlockInterests">
+                         <label for="interest">Interest:</label><p></p><input id="newInterest" type="text" name="interest">
+                         <button id="addBut"type="button">Add</button><p></p>
+                        <div align="center" id ="interestAdded" style="color: red;"></div>
+                        {% for interest in user_info.interests.all %}
+                            <span id="labelRemove{{ interest.label}}" class="w3-tag w3-small w3-theme-d5"> {{ interest.label }}</span>
+                            <button id="remove{{ interest.label}}" >Remove</button>
+                            <p></p>
+                        {% endfor %}    
+                      </div>
+                    </form> 
+                      
+                    
+          
+                    
+
+
                 </div>
             </div>
         </div>
     </div>
+{% endblock %}
+
+
+
+{% load static %}
+{% block script %}
+<script>
+ $.ajaxSetup({
+     headers: { "X-CSRFToken": '{{csrf_token}}' }
+ });
+</script>
+<script src="{% static 'settingsPage.js' %}"></script>
 {% endblock %}

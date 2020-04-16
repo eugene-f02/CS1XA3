@@ -2,17 +2,42 @@
    | Handle Submitting Posts - called by $('#post-button').click(submitPost)
    ********************************************************************************************
    */
+function  submitPost_callback(data){
+ location.reload();
+}
+
 function submitPost(event) {
-    alert('Post Button Pressed');
+    let path = post_submit_url
+    let json_data ={"postContent":$("#post-text").html()}
+    $.post(path,
+        json_data,
+        submitPost_callback);
+
     // TODO Objective 8: send contents of post-text via AJAX Post to post_submit_view (reload page upon success)
 }
 
+function submitLike_callback(data){
+    if (data['totalLikes']==1) $("#numOfLikes-"+data['butId']).html(data['totalLikes']+" Like")
+    else $("#numOfLikes-"+data['butId']).html(data['totalLikes']+" Likes")
+    $("#post-"+data['butId']).prop('disabled',true)
+    if (data['success']==true){
+        $("#likedSuccess-"+data['butId']).html("Successfully liked the post").css("margin-left","30px").css("color",'green')
+    }
+    else $("#likedSuccess-"+data['butId']).html("This post has been already liked").css("margin-left","30px").css("color",'red')
+
+
+}
 /* ********************************************************************************************
    | Handle Liking Posts - called by $('.like-button').click(submitLike)
    ********************************************************************************************
    */
 function submitLike(event) {
-    alert('Like Button Pressed');
+    id=($(this).attr('id')).slice(5)
+    let path = like_post_url
+    let json_data ={"postID":id}
+    $.post(path,
+        json_data,
+        submitLike_callback);
     // TODO Objective 10: send post-n id via AJAX POST to like_view (reload page upon success)
 }
 
@@ -21,13 +46,8 @@ function submitLike(event) {
    ********************************************************************************************
    */
 function moreResponse(data,status) {
-    if (status == 'success') {
-        // reload page to display new Post
-        location.reload();
-    }
-    else {
-        alert('failed to request more posts' + status);
-    }
+    if (data['success']) location.reload();
+    else  $("#more-button").prop('disabled',true);
 }
 
 function submitMore(event) {
