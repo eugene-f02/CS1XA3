@@ -316,7 +316,7 @@ def post_submit_view(request):
                              or 404 if any error occurs
     '''
     postContent = request.POST.get('postContent')
-    if postContent is not None:
+    if postContent is not "" and postContent is not None:
         if request.user.is_authenticated:
             owner=models.UserInfo.objects.get(user=request.user)
             models.Post.objects.create(owner=owner,content=postContent)
