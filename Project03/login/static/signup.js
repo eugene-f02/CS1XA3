@@ -29,7 +29,7 @@ $(document).ready(function() {
                    if (data["userExists"]==true) $("#userExists").fadeIn().html("The username already exists. Please use a different username");
                    else{
                     $("#userExists").fadeOut();
-                    if (data["acceptableLength"]==false && pass!='')  $("#pass").fadeIn().html("Password has to be at least 8 character long");
+                    if (data["acceptableLength"]==false && pass!='')  $("#pass").fadeIn().html("Password has to be at least 8 characters long");
                     else if (data["specialChar"]==false && pass!='')  $("#pass").fadeIn().html("Password has to contain at least one special character <p></p> (i.e. !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ ) ");
                     else if (data["lowerChar"]==false && pass!='')  $("#pass").fadeIn().html("Password has to contain at least one lowercase character");
                     else if (data["upperChar"]==false && pass!='')  $("#pass").fadeIn().html("Password has to contain at least one uppercase character");

@@ -86,7 +86,8 @@ def signup_view(request):
     else:
       return render(request,'signup.djhtml')
 
-
+def wildcard_view(request):
+  return redirect('login:login_view')
 
 def data_isValid(uname,pswrd,confPswrd):
   context={

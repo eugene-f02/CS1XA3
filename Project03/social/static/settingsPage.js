@@ -176,7 +176,7 @@ $(document).ready(function() {
                    if (data["currentPassNotMatch"]==true && oldPass!='') $("#wrongCurrPass").html("Wrong current password");
                    else{
                     $("#wrongCurrPass").html("");
-                    if (data["acceptableLength"]==false && pass!='')  $("#NewPass").html("Password has to be at least 8 character long");
+                    if (data["acceptableLength"]==false && pass!='')  $("#NewPass").html("Password has to be at least 8 characters long");
                     else if (data["specialChar"]==false && pass!='')  $("#NewPass").html("Password has to contain at least one special character <p></p> (i.e. !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ ) ");
                     else if (data["lowerChar"]==false && pass!='')  $("#NewPass").html("Password has to contain at least one lowercase character");
                     else if (data["upperChar"]==false && pass!='')  $("#NewPass").html("Password has to contain at least one uppercase character");
