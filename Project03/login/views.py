@@ -65,7 +65,7 @@ def signup_view(request):
 
     # TODO Objective 1: implement signup view
     if request.method == 'POST':
-      uname = request.POST['username']
+      uname = request.POST['username'].strip()
       pswrd = request.POST['password']
       confPswrd = request.POST['confPass']
       data= data_isValid(uname,pswrd,confPswrd)
@@ -93,6 +93,7 @@ def data_isValid(uname,pswrd,confPswrd):
   context={
   'valid':True,
   "userExists":False,
+  'emptyName':False,
   'acceptableLength': False,
   'specialChar':False,
   'lowerChar':False,
@@ -103,6 +104,10 @@ def data_isValid(uname,pswrd,confPswrd):
 
   if models.User.objects.filter(username=uname).exists():
     context["userExists"]=True
+    context['valid']=False
+    return context
+  elif uname=='':
+    context['emptyName']=True
     context['valid']=False
     return context
   else:
@@ -128,10 +133,14 @@ def data_isValid(uname,pswrd,confPswrd):
     if confPswrd == pswrd:
       context['confirmationSuccess']=True
 
+
+    context['emptyName']=True
     context["userExists"]=True
     if False in context.values():
       context['valid']=False
     context["userExists"]=False
+    context['emptyName']=False
+    
     return context
    
 
