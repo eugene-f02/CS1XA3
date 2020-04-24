@@ -24,7 +24,7 @@
           1. Make sure the directory $HOME/public_html/static/ exists (on the server)
           1. **cd** into CS1XA3/Project03
           1. Run `python manage.py collectstatic` in order to copy over static files to the **STATIC_ROOT** directory
-          1. Run `python manage.py runserver localhost:portnum`, where **portnum** is your port number listed on mac1xa3.ca
+          1. Run `python manage.py runserver localhost:portnum`, where **portnum** is your port number listed on mac1xa3.ca (**portnum** associated with my macid **fedorivy** is **10028**)
           1. You can now access *mac1xa3.ca/e/**macid**/* and all associated links, where **macid** is your actual macid
 
 1. Log in with username **Eugene**, and password **12345qQ1!**  
