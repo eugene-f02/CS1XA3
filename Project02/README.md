@@ -1,6 +1,6 @@
 # CS 1XA3 Project02 - fedorivy
 
-## Available at http://cv.eugenefv.tech
+## Available at http://eugenefv.tech
 
 ## Overview
 
