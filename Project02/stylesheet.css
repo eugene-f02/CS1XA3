@@ -76,11 +76,35 @@
   display: none;
 
 }
+
+a { color: inherit; text-decoration: none;} 
+
+a:hover {
+  color: goldenrod;
+}
+
+button {
+  background-color: rgba(9, 40, 87, 0.879); /* Green */
+  border: none;
+  color: white;
+  padding: 2vw 5vw;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1vw;
+  font-family: inherit;
+
+  margin-left: 33%;
+  margin-top: 10%;
+  
+}
+button:hover{ background-color: goldenrod}
+
 body{
   width:100%;
   font-family: 'Kalam', cursive;
   margin: -0.48vw 0 -0.6vw;
-  background-color: snow;
+  background: linear-gradient(90deg, snow 0%, rgb(197, 191, 200) 150%);
 }
 
 header {  /* DONE */
@@ -124,7 +148,7 @@ header {  /* DONE */
 
 #content{  /* DONE */
   padding-top: 23vw;
-  background-color: snow;
+  background: linear-gradient(90deg, snow 0%, rgb(197, 191, 200) 150%);
   padding-left: 3%;
   padding-right:3%;
 }
@@ -136,7 +160,9 @@ header {  /* DONE */
   border-radius: 0.7vw;
   border-color: rgb(20, 3, 45);
 }
-
+#skills{
+  height:41.6vw;
+}
 #greetings{ /* DONE */
   height: 35.7vw; 
 }
@@ -188,6 +214,7 @@ header {  /* DONE */
 .projSec{
   margin-right: 10%;
   text-align: center;
+  width:80%
 }
 .about{
   font-size: 1.2vw;
@@ -206,7 +233,7 @@ header {  /* DONE */
 
 }
 #projects{
-  height: 61vw;
+  height: 116vw;
   font-size: 1.8vw;
 }
 .circleProgress{
@@ -222,7 +249,7 @@ header {  /* DONE */
   border-radius: 50%;
   line-height: 6vw; 
 	box-shadow: inset 0 0 0 0.12vw lightgray,
-					0 0 0 0.24vw snow;
+					0 0 0 0.24vw transparent;
 }
 .projectCircle{
   
@@ -235,7 +262,7 @@ header {  /* DONE */
 	border: 0.12vw solid rgb(48,49,51);
   border-radius: 50%;
 	box-shadow: inset 0 0 0 0.12vw lightgray,
-					0 0 0 0.24vw snow;
+					0 0 0 0.24vw transparent;
   
 }
 .circle1{
@@ -308,7 +335,7 @@ header {  /* DONE */
 	border: 0.075vw solid rgb(48,49,51);
 	border-radius: 50%;
 	box-shadow: inset 0 0 0 0.15vw snow,
-					0 0 0 0.3vw snow;
+					0 0 0 0.3vw transparent;
 }
 
 .div-dot3:after /* DONE */
@@ -328,7 +355,7 @@ header {  /* DONE */
 	border: 0.075vw solid rgb(48,49,51);
 	border-radius: 50%;
 	box-shadow: inset 0 0 0 0.15vw snow,
-					0 0 0 0.3vw snow;
+					0 0 0 0.3vw transparent;
 }
 
 .div-dot1:after /* DONE */
@@ -344,7 +371,7 @@ header {  /* DONE */
 	border: 0.075vw solid rgb(48,49,51);
 	border-radius: 50%;
 	box-shadow: inset 0 0 0 0.15vw lightgray,
-					0 0 0 0.3vw lightgray;
+					0 0 0 0.3vw transparent;
 }
 
 
@@ -420,19 +447,26 @@ header {  /* DONE */
   text-align: left;
 }
 
-#tourBrackDiv{
-  margin-top: 7%;
+#tourBrackDiv,#chessDiv,#social-mediaDiv{
+  margin-top: 5%;
 }
 
 #timmies{
   width: 30%; float: right; margin-left: 48%; margin-top: 5% ;position: absolute;display: none;
 }
 
-#workExp{
-  height: 43vw;
+#nsc{
+  width: 30%; float: right; margin-left: 50%; margin-top: 42% ;position: absolute;display: none;border-radius: 4%;border: 1px solid black;
 }
 
-#timmiesUl{
+#workExp{
+  height: 75vw;
+}
+
+#nscWorkSection{
+  margin-top:4%
+}
+.workUl{
   margin-right: 4vw;
 }
 #volunteer{
@@ -447,7 +481,7 @@ header {  /* DONE */
   height: 56vw;
 }
 
-#chess,#tournament{
+#chess,#tournament,#visual-sort,#social-media-site{
   width:70%;display: none;
 }
 
@@ -458,4 +492,22 @@ header {  /* DONE */
 
 #mcmaster{
   width:30vw;
+  margin-left:10%;
+}
+
+@media (max-width:1650px){
+  #workExp{height: 80vw; }  
+}
+
+@media (max-width:663px){
+  #skills{height: 55vw}
+}
+
+@media (max-width:756px){
+  #skills{height: 55vw}
+}
+
+@media (max-width:656px){
+  #projects{height: 121vw}
+  #workExp{height: 83vw; }  
 }

@@ -46,6 +46,7 @@
                         <div id="welcome">
                             <h1 id="welc" class="title"> Welcome to my CV page!</h1>
                                 <span id="intro" class="mediumFont"> This page will provide you with various information about me!</span>
+                                <a target="popup" href='Eugene_Resume.pdf'><button>My Resume</button></a>
                         </div>
                     </div>
 
@@ -57,7 +58,7 @@
 
             <div class="container" id="aboutMe">
                 <div class="title sectionTittle">About Me</div>
-                <div id="aboutMeInfo" class="section mediumFont">I am a first-year <span class="redColor">Computer Science </span>student at McMaster University. I have chosen to study Computer Science because I believe that our future can be a much better place with the help of software, and by mastering this field, one day, I might be the one who makes a difference in the lives of millions. 
+                <div id="aboutMeInfo" class="section mediumFont">I am a second-year <span class="redColor">Computer Science </span>student at McMaster University. I have chosen to study Computer Science because I believe that our future can be a much better place with the help of software, and by mastering this field, one day, I might be the one who makes a difference in the lives of millions. 
                     I am eager to learn, and I am open to new opportunities.
                 </div>
                 <div id="myLang" class="section mediumFont">
@@ -168,6 +169,7 @@
                             <ul class='skills medFont'>
                                 <li>Microsoft<br> Office</li>
                                 <li>Git</li>
+                                <li>NGINX</li>
                             </ul>
 
                         </div>
@@ -178,9 +180,42 @@
                         <div class="container" id="projects">
                             <div class="title sectionTittle">Technical Projects</div>
                                
+
                             <div class="projSec section">
+                                        <div id="proj3" class="projectCircle">+</div> 
+                                        <div class='largeFont blueTxtBold'><a target="popup" href="http://visual-sort.eugenefv.tech">Sorting Visualizer</a></div>
+                                    <p class="about">Over 500 lines of code (JavaScript, React) | Finished in July 2020</p>
+                                    <ul class='medFont textAllignLeft'>
+                                        <li>The project is an interactive website that visualizes famous sorting algorithms such as Quick Sort, Heap Sort, Merge Sort, and others</li>
+                                        <li>Worked independently, using JavaScript, HTML, CSS, and a web framework React </li>
+                                    </ul>
+                                    <img id="visual-sort" src="https://i.ibb.co/ZXKGQSL/s-KHkb-KTPRq.gif">
+                            </div> 
+
+                            <div id ="social-mediaDiv" class="projSec section">
+                                        <div id="proj4" class="projectCircle">+</div> 
+                                        <div class='largeFont blueTxtBold'><a target="popup" href="http://social-media.eugenefv.tech">Social Media Website</a></div>
+                                    <p class="about">Over 1500 lines of code (JavaScript, Django, Python) | Finished in April 2020</p>
+                                    <ul class='medFont textAllignLeft'>
+                                        <li>The project is a social-media website that enables following functionalities:
+                                            <ul class='medFont textAllignLeft'>
+                                                <li>login/logout buttons</li>
+                                                <li>signup button</li>
+                                                <li>creating posts</li>
+                                                <li>liking posts</li>
+                                                <li>sending/accepting/declining friend requests</li>
+                                                <li>updating user information</li>
+                                                <li>other features</li>
+                                            </ul>
+                                        </li>
+                                        <li>Worked independently, using Python, JavaScript, HTML, CSS, and a web framework Django  </li>
+                                    </ul>
+                                    <img id="social-media-site" src="http://g.recordit.co/Hfcr7Hm3Ws.gif">
+                            </div>      
+                            
+                            <div id ="chessDiv" class="projSec section">
                                         <div id="proj1" class="projectCircle">+</div> 
-                                        <div class='largeFont blueTxtBold'>Chess Game</div>
+                                        <div class='largeFont blueTxtBold'><a target="popup" href="https://github.com/eugene-f02/Chess-Game">Chess Game</a></div>
                                     <p class="about">Over 5000 lines of code (Visual Basic) | Finished in January 2018</p>
                                     <ul class='medFont textAllignLeft'>
                                         <li>The project is an interactive application which simulates game of chess, and it was my first large project designed in an OOP language</li>
@@ -191,7 +226,7 @@
 
                             <div id="tourBrackDiv" class="projSec section">
                                 <div id="proj2" class="projectCircle">+</div> 
-                                <div class='largeFont blueTxtBold'>Interactive Tournament Bracket Generator</div>
+                                <div class='largeFont blueTxtBold'><a target="popup" href="https://github.com/eugene-f02/Tournament-Bracket-Generator">Interactive Tournament Bracket Generator</a></div>
                                 <p class="about">Over 2000 lines of code (Java) | Finished in January 2019</p>
                                 <ul class='medFont textAllignLeft'>
                                     <li>The project is an interactive application which allows a user to generate tournament brackets for up to 32 participants, place the participants into the generated tournament bracket and move them around the bracket</li>
@@ -211,7 +246,10 @@
                        
                         <div class="container" id="workExp">
                             <img id="timmies" src="tim-hortons.png"/>
+                            <img id='nsc' src='northern_sunrise_county.png'>
                             <div class=" title sectionTittle">Work Experience</div>
+
+
                             <div class="section">
                                 <span class='largeFont blueTxtBold'>Tim Hortons'</span>
                                 <p class="about blueTxtBold">Position: Baker | Storefront Team Member</p>
@@ -219,7 +257,7 @@
                                 <p class="about">Location: London, ON</p>
 
                             
-                                <ul class='medFont textAllignLeft' id="timmiesUl">
+                                <ul class='medFont textAllignLef worlUl'>
                                 <li>Developed strong time management skills by managing part-time job as well as the high school workload</li>
                                     <li>Improved verbal communication skills by working with customers and solving their problems</li>
                                     <li>Demonstrated punctuality by always being on time for scheduled shifts</li>
@@ -229,6 +267,26 @@
                             
 
                             </div>
+
+                            
+                            <div class="section" id='nscWorkSection'>
+                                <span class='largeFont blueTxtBold'>Northern Sunrise County</span>
+                                <p class="about blueTxtBold">Position: Seasonal Agricultural Labourer</p>
+                                <p class="about">Duration: May 2020 - present</p>
+                                <p class="about">Location: Nampa, AB</p>
+
+                            
+                                <ul class='medFont textAllignLeft workUl'>
+                                <li>Performed herbicide application and provided hands-on services</li>
+                                    <li>Assisted with the day-to-day operations of the Department</li>
+                                    <li>Maintained accurate records of herbicide use</li>
+                                    <li>Established and maintained productive working relations with the public, staff of other departments, and other local agencies.</li>
+                                    <li>Performed other duties as assigned by my supervisors</li>
+                                </ul>
+                            
+
+                            </div>
+
                         </div>
 
                 <div id="volunteerDivider" class="divider div-transparent2 div-dot2" ></div>
@@ -306,6 +364,16 @@
                                 <p class="about blueTxtBold">Issuer: Governor General of Canada</p>
                                 <p class="about">Issue date: November 2019</p>
                                 <p class="about blackColor">Description: Awarded to the student graduating with the highest grade point average from a Canadian high school.</p>
+                            </div>
+                        </div>
+
+                        <div class="section awardSection">
+                            <div id="award7" class="projectCircle awb">+</div> 
+                            <div class='largeFont blueTxtBold'>&nbspDean's Honour List</div>
+                            <div id="aw2" class="section aw">
+                                <p class="about blueTxtBold">Issuer: McMaster University</p>
+                                <p class="about">Issue date: May 2020</p>
+                                <p class="about blackColor">Description:  Students will be named to the Deans’ Honour List when a minimum Cumulative GPA average of 9.5 is achieved.</p>
                             </div>
                         </div>
 

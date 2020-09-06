@@ -67,6 +67,54 @@ function viewportWidthOf(a){
     return ((a / viewportWidth) * 100);
 }
 
+var tempVisualSort=0;
+var counterVisualSort=0;
+
+$("#proj3").click(function (e) { 
+    e.preventDefault();
+
+    if (counterVisualSort%2==0){
+        $("#visual-sort").show(500);
+        $("#proj3").text("-");
+        $("#projects").animate({
+            height: '+='+"29.8"+'vw'
+          });
+          counterVisualSort++;
+    }
+    else{
+        $("#visual-sort").hide(500);
+        $("#proj3").text("+");
+        $("#projects").animate({
+            height: '-='+"29.8"+'vw'
+          });
+          counterVisualSort++;
+    }
+});
+
+var tempSocialMed=0;
+var counterSocialMed=0;
+
+$("#proj4").click(function (e) { 
+    e.preventDefault();
+
+    if (counterSocialMed%2==0){
+        $("#social-media-site").show(500);
+        $("#proj4").text("-");
+        $("#projects").animate({
+            height: '+='+"29.8"+'vw'
+          });
+          counterSocialMed++;
+    }
+    else{
+        $("#social-media-site").hide(500);
+        $("#proj4").text("+");
+        $("#projects").animate({
+            height: '-='+"29.8"+'vw'
+          });
+          counterSocialMed++;
+    }
+});
+
 var tempChess=0;
 var counterChess=0;
 
@@ -77,7 +125,7 @@ $("#proj1").click(function (e) {
         $("#chess").show(500);
         $("#proj1").text("-");
         $("#projects").animate({
-            height: '+='+"45.8"+'vw'
+            height: '+='+"43.8"+'vw'
           });
         counterChess++;
     }
@@ -85,7 +133,7 @@ $("#proj1").click(function (e) {
         $("#chess").hide(500);
         $("#proj1").text("+");
         $("#projects").animate({
-            height: '-='+"45.8"+'vw'
+            height: '-='+"43.8"+'vw'
           });
         counterChess++;
     }
@@ -103,7 +151,7 @@ $("#proj2").click(function (e) {
         $("#tournament").show(500);
         $("#proj2").text("-");
         $("#projects").animate({
-            height: '+='+"33"+'vw'
+            height: '+='+"31"+'vw'
           });
         counterTour++;
     }
@@ -111,7 +159,7 @@ $("#proj2").click(function (e) {
         $("#tournament").hide(500);
         $("#proj2").text("+");
         $("#projects").animate({
-            height: '-='+"33"+'vw'
+            height: '-='+"31"+'vw'
           });
         counterTour++;
     }
@@ -145,6 +193,7 @@ var skills=false;
 var robotics=false;
 var ebc=false;
 var timmies = false;
+var nsc = false;
 var bar=false;
 var r=220;
 var g=20;
@@ -171,16 +220,18 @@ var delayFinished=false;
 
 
         if ($(this).scrollTop()>=$("#educationDivider").position().top-headerError && bar==false){
-            $(".bar").animate({width:"+=15%"},3000);
+            $(".bar").animate({width:"+=19%"},3000,() => {$(".circle1").css({border: '0.3vw solid green'});$(".bar").animate({width:"+28%"},500)});
             $(".circle1").css({border: '0.2vw solid red'}).animate({
                 borderWidth: "0.3vw"
             }, 1500);
             bar=true;
         }
         
-        if ($(this).scrollTop()>= $("#workDivider").position().top-headerError && timmies==false){
+        if ($(this).scrollTop()>= $("#workDivider").position().top-headerError && timmies==false && nsc==false){
             $("#timmies").fadeIn(1500);
             timmies=true;
+            $("#nsc").fadeIn(1500);
+            nsc=true
         }
         
         if ($(this).scrollTop()>= $("#volunteerDivider").position().top-headerError && ebc==false){
