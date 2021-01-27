@@ -1,7 +1,5 @@
 # CS 1XA3 Project02 - fedorivy
 
-## Available at http://eugenefv.tech
-
 ## Overview
 
 This webpage is **Eugene Fedoriv**'s custom CV.
